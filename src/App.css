@@ -1,24 +1,38 @@
 .App {
-  width: 652px;
+  width: 650px;
   margin: 0 auto;
 }
 
+.Header-wrapper {
+  display: flex;
+  margin-top: 1.5rem;
+  gap: 1.5rem;
+}
+
+.Back-button {
+  flex-shrink: 0;
+  width: 165px;
+}
+
+.Back-button button {
+  width: 100%;
+  padding: 22px 24px;
+}
+
 .App-search {
-  position: absolute;
-  top: 50%;
+  position: relative;
+  margin-top: 50%;
   display: flex;
   background: #221c44;
   border: 2px solid #4d457c;
   width: 72px;
-  color: #FFFFFF;
+  color: #ffffff;
   padding: 16px 24px;
   border-radius: 50px;
   gap: 1rem;
   align-items: center;
-  animation: 
-    grow 1.2s cubic-bezier(0.76, 0, 0.24, 1) forwards, 
-    borderColor 4.4s 1.2s,
-    ripple 1s 4.8s forwards, 
+  animation: grow 1.2s cubic-bezier(0.76, 0, 0.24, 1) forwards,
+    borderColor 4.4s 1.2s, ripple 1s 4.8s forwards,
     moveTop 1.3s cubic-bezier(0.5, -0.24, 0.1, 1.2) 5s forwards;
 }
 
@@ -36,7 +50,7 @@
     width: 72px;
   }
   to {
-    width: 652px;
+    width: 650px;
   }
 }
 
@@ -74,10 +88,10 @@
 
 @keyframes moveTop {
   from {
-    top: 50%;
+    margin-top: 50%;
   }
   to {
-    top: 24px;
+    margin-top: 0;
   }
 }
 
@@ -85,12 +99,10 @@
   min-height: 1.5rem;
   font-size: 1.33rem;
   overflow: hidden;
-  border-right: 0.15em solid transparent; 
+  border-right: 0.15em solid transparent;
   white-space: nowrap;
-  animation: 
-    blinkCaret 0.85s 5 forwards,
-    typing 2.5s steps(40, end),
-    changeColor .5s 4s forwards
+  animation: blinkCaret 0.85s 5 forwards, typing 2.5s steps(40, end),
+    changeColor 0.5s 4s forwards;
 }
 
 @keyframes typing {
@@ -114,24 +126,30 @@
 
 @keyframes changeColor {
   from {
-    color: #FFFFFF;
+    color: #ffffff;
   }
   to {
-    color: #B2A8EE;
+    color: #b2a8ee;
   }
+}
+
+.Search-results,
+.Frontend,
+.Photographer {
+  /* base margin from component 86px */
+  margin-top: 1rem;
 }
 
 .Search-results {
-  /* base margin from component 86px */
-  margin: 102px 24px 0 24px;
+  margin: 1rem 1.5rem;
 }
 
 .Search-results p {
-  color: #B2A8EE;
+  color: #b2a8ee;
   font-size: 1rem;
   font-weight: 400;
   opacity: 0;
-  animation: fadeInDown .2s forwards;
+  animation: fadeInDown 0.2s forwards;
 }
 
 .Search-results--inner {
@@ -140,20 +158,28 @@
   gap: 8px;
 }
 
-.Search-results--inner p {
-  font-size: 1.2rem;
-  color: #CA7786;
-  font-weight: 700;
-  opacity: 0;
-  animation: fadeInDown .3s .1s forwards;
+.Search-results--inner div:nth-child(1) {
+  flex-shrink: 0;
 }
 
-.Search-results h2 {
+.Search-results--inner p {
+  font-size: 1.2rem;
+  color: #ca7786;
+  font-weight: 700;
+  opacity: 0;
+  animation: fadeInDown 0.3s 0.1s forwards;
+}
+
+.Search-results--inner button {
+  color: #ffffff;
+  text-decoration: none;
+  background: transparent;
   font-size: 1.4rem;
   line-height: 1.5rem;
   margin-bottom: 16px;
+  cursor: pointer;
   opacity: 0;
-  animation: fadeInDown .4s .2s forwards;
+  animation: fadeInDown 0.4s 0.2s forwards;
 }
 
 @keyframes fadeInDown {
@@ -167,28 +193,71 @@
   }
 }
 
-.Search-results--inner h2 {
-  color: #FFFFFF;
-  text-decoration: none;
+.Search-results--inner button:hover {
+  text-decoration: #4d457c wavy underline;
 }
 
-.Search-results--inner h2::before {
+.Search-results--inner button::before {
   content: "->";
   opacity: 0;
+  text-decoration: #0F0B21 wavy underline;
 }
 
-.Search-results--inner h2:hover::before {
+.Search-results--inner button:hover::before {
   content: "->";
   opacity: 1;
   padding-right: 8px;
-  transition: .25s;
+  transition: 0.25s;
 }
 
-.Search-results--inner a {
+.Frontend,
+.Photographer {
+  color: #ffffff;
+}
+
+.Frontend-wrapper img {
+  border-radius: 50%;
+}
+
+.Frontend-div {
+  margin-top: 6rem;
+}
+
+.Photographer {
+  text-align: center;
+}
+
+.Photographer a {
+  color: #A8EEEE;
   text-decoration: none;
-  color: inherit;
 }
 
-.Search-results--inner a:hover {
-  text-decoration: #4d457c wavy underline;
+.Photographer a:hover {
+  text-decoration: #A8EEEE wavy underline;
+}
+
+.Frontend-wrapper {
+  display: flex;
+  margin-top: 10rem;
+  gap: 24px;
+}
+
+.Frontend-wrapper h3 {
+  color: #A8EEEE;
+  font-size: 3rem;
+}
+
+.subtitle {
+  color: #B2A8EE;
+  margin-top: .5rem;
+}
+
+.paragraph {
+  color: #ffffff;
+  line-height: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+h4 {
+  font-size: 2rem;
 }
