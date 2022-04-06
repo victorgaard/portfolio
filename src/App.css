@@ -16,7 +16,7 @@
   gap: 1rem;
   align-items: center;
   animation: 
-    grow 1.2s ease-out forwards, 
+    grow 1.2s cubic-bezier(0.76, 0, 0.24, 1) forwards, 
     borderColor 4.4s 1.2s,
     ripple 1s 4.8s forwards, 
     moveTop 1.3s cubic-bezier(0.5, -0.24, 0.1, 1.2) 5s forwards;
@@ -63,7 +63,6 @@
     color: #fff;
     background: #221c44;
   }
-
   50% {
     box-shadow: 0px 0px 50px rgb(255 255 255 / 5%);
   }
@@ -129,7 +128,7 @@
 
 .Search-results p {
   color: #B2A8EE;
-  font-size: 1.15rem;
+  font-size: 1rem;
   font-weight: 400;
   opacity: 0;
   animation: fadeInDown .2s forwards;
@@ -138,10 +137,11 @@
 .Search-results--inner {
   margin-top: 48px;
   display: flex;
-  gap: 16px;
+  gap: 8px;
 }
 
 .Search-results--inner p {
+  font-size: 1.2rem;
   color: #CA7786;
   font-weight: 700;
   opacity: 0;
@@ -149,10 +149,9 @@
 }
 
 .Search-results h2 {
-  color: #FFFFFF;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   line-height: 1.5rem;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
   opacity: 0;
   animation: fadeInDown .4s .2s forwards;
 }
@@ -166,4 +165,30 @@
     transform: translateY(0%);
     opacity: 1;
   }
+}
+
+.Search-results--inner h2 {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.Search-results--inner h2::before {
+  content: "->";
+  opacity: 0;
+}
+
+.Search-results--inner h2:hover::before {
+  content: "->";
+  opacity: 1;
+  padding-right: 8px;
+  transition: .25s;
+}
+
+.Search-results--inner a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.Search-results--inner a:hover {
+  text-decoration: #4d457c wavy underline;
 }

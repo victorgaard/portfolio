@@ -56,12 +56,12 @@ function App() {
               <p>Did you mean:</p>
             </div>
             <div>
-              <a href="/">
-                <h2>victor santos front-end developer</h2>
-              </a>
-              <a href="/">
-                <h2>victor santos landscape photographer</h2>
-              </a>
+              <h2>
+                <a href="/">victor santos front-end developer</a>
+              </h2>
+              <h2>
+                <a href="/">victor santos landscape photographer</a>
+              </h2>
             </div>
           </div>
         </div>
