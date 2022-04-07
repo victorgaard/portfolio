@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import Search from "./assets/search.svg";
 import Avatar from "./assets/avatar.jpg";
+import AvatarNature from "./assets/avatar-nature.jpg";
 
 function App() {
   const [title, setTitle] = useState("product designer");
@@ -40,7 +41,7 @@ function App() {
     let timeout;
     setTimeout(() => {
       setAnimationEnd(true);
-    }, 1200);
+    }, 500);
 
     return () => {
       clearInterval(timeout);
@@ -53,7 +54,7 @@ function App() {
     let timeout;
     setTimeout(() => {
       setSearchResults(true);
-    }, 6400);
+    }, 4200);
 
     return () => {
       clearInterval(timeout);
@@ -170,6 +171,7 @@ function App() {
               >
                 gitshowcase
               </a>
+              .
             </p>
           </section>
 
@@ -378,37 +380,41 @@ function App() {
       )}
 
       {photographer && (
-        <div className="Photographer">
-          <p>
-            Come back sometime soon, my friend. Meanwhile, feel free to check my
-            Instagram account&nbsp;@
-            <a
-              href="https://www.instagram.com/hunter.graphy/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              hunter.graphy
-            </a>
-          </p>
+        <section className="Photographer">
+          <section className="Photographer-wrapper">
+            <div>
+              <img src={AvatarNature} alt="Avatar" />
+            </div>
+            <div>
+              <h3>Join me in the quest for beauty</h3>
 
-          <script src="https://snapwidget.com/js/snapwidget.js" />
-
-          <iframe
-            src="https://snapwidget.com/embed/992098"
-            className="snapwidget-widget"
-            allowtransparency="true"
-            frameBorder="0"
-            scrolling="no"
-            style={{
-              marginTop: "48px",
-              border: "none",
-              overflow: "hidden",
-              width: "100%",
-              height: "2260px",
-            }}
-            title="Instagram feed"
-          />
-        </div>
+              <p className="subtitle">
+                A landscape photographer &amp; filmmaker in the making.
+              </p>
+            </div>
+          </section>
+          <section className="Iframe">
+            <script src="https://snapwidget.com/js/snapwidget.js" />
+            <iframe
+              src="https://snapwidget.com/embed/992098"
+              className="snapwidget-widget"
+              allowtransparency="true"
+              frameBorder="0"
+              scrolling="no"
+              style={{
+                marginTop: "48px",
+                border: "none",
+                overflow: "hidden",
+                width: "100%",
+                height: "2260px",
+              }}
+              title="Instagram feed"
+            />
+          </section>
+          <footer className="Footer">
+            <p>Designed &amp; Built by Victor Santos🐧</p>
+          </footer>
+        </section>
       )}
     </div>
   );

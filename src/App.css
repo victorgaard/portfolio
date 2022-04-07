@@ -57,9 +57,19 @@ body {
   border-radius: 50px;
   gap: 1rem;
   align-items: center;
-  animation: grow 1.2s cubic-bezier(0.76, 0, 0.24, 1) forwards,
-    borderColor 4.4s 1.2s, ripple 1s 4.8s forwards,
-    moveTop 1.3s cubic-bezier(0.5, -0.24, 0.1, 1.2) 5s forwards;
+  animation: grow 0.5s cubic-bezier(0.76, 0, 0.24, 1) forwards,
+    borderColor 4.4s 0.5s, ripple 1s 3.2s forwards,
+    moveTop 0.9s cubic-bezier(0.5, -0.24, 0.1, 1.2) 3.4s forwards;
+}
+
+.App-search h1 {
+  min-height: 1.5rem;
+  font-size: 1.33rem;
+  overflow: hidden;
+  border-right: 0.15em solid transparent;
+  white-space: nowrap;
+  animation: blinkCaret 0.85s 4 forwards, typing 2s steps(40, end),
+    changeColor 0.5s 3s forwards;
 }
 
 .App-search img {
@@ -95,7 +105,7 @@ body {
 @keyframes ripple {
   0% {
     border: 2px solid white;
-    box-shadow: 0px 0px 20px rgb(255 255 255 / 20%);
+    box-shadow: 0px 0px 20px rgb(255 255 255 / 30%);
     color: #4d457c;
     background: #1d173c;
   }
@@ -119,16 +129,6 @@ body {
   to {
     margin-top: 0;
   }
-}
-
-.App-search h1 {
-  min-height: 1.5rem;
-  font-size: 1.33rem;
-  overflow: hidden;
-  border-right: 0.15em solid transparent;
-  white-space: nowrap;
-  animation: blinkCaret 0.85s 5 forwards, typing 2.5s steps(40, end),
-    changeColor 0.5s 4s forwards;
 }
 
 @keyframes typing {
@@ -181,6 +181,7 @@ body {
 .Search-results--inner {
   margin-top: 48px;
   display: flex;
+  flex-direction: column;
   gap: 8px;
 }
 
@@ -189,7 +190,7 @@ body {
 }
 
 .Search-results--inner p {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   color: #ca7786;
   font-weight: 700;
   opacity: 0;
@@ -200,12 +201,31 @@ body {
   color: #ffffff;
   text-decoration: none;
   background: transparent;
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   line-height: 1.5rem;
-  margin-bottom: 16px;
   cursor: pointer;
   opacity: 0;
-  animation: fadeInDown 0.4s 0.2s forwards;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  white-space: nowrap;
+  animation: fadeInDown 0.2s 0.2s forwards;
+}
+
+.Search-results--inner button:hover {
+  color: #0f0b21;
+  background: #a8eeee;
+}
+
+.Search-results--inner button::before {
+  content: "->";
+  padding-right: 8px;
+  transition: 0.2s;
+}
+
+.Search-results--inner button:hover::before {
+  content: "->";
+  padding-right: 16px;
+  opacity: 0.5;
 }
 
 @keyframes fadeInDown {
@@ -219,34 +239,16 @@ body {
   }
 }
 
-.Search-results--inner button:hover {
-  text-decoration: #4d457c wavy underline;
-}
-
-.Search-results--inner button::before {
-  content: "->";
-  opacity: 0;
-  text-decoration: #0f0b21 wavy underline;
-}
-
-.Search-results--inner button:hover::before {
-  content: "->";
-  opacity: 1;
-  padding-right: 8px;
-  transition: 0.25s;
-}
-
 .Frontend,
 .Photographer {
   color: #ffffff;
 }
 
-.Frontend-wrapper img {
+.Frontend-wrapper img,
+.Photographer-wrapper img {
+  width: 185px;
+  height: 185px;
   border-radius: 50%;
-}
-
-.Photographer {
-  text-align: center;
 }
 
 .Frontend a,
@@ -267,7 +269,8 @@ body {
   animation: fadeInDown 0.2s 0.1s forwards;
 }
 
-.Frontend-wrapper h3 {
+.Frontend-wrapper h3,
+.Photographer-wrapper h3 {
   color: #a8eeee;
   font-size: 3rem;
 }
@@ -281,7 +284,8 @@ body {
   opacity: 0.84;
 }
 
-.Frontend-wrapper .subtitle {
+.Frontend-wrapper .subtitle,
+.Photographer-wrapper .subtitle {
   color: #b2a8ee;
   font-weight: 700;
   margin-top: 0.5rem;
@@ -342,14 +346,13 @@ ul li::before {
 }
 
 .Projects {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
   padding: 0px;
   margin: 2.5rem 0 0 0;
   line-height: 1.8rem;
   position: relative;
-  height: 100%;
 }
 
 .Projects a {
@@ -369,10 +372,13 @@ ul li::before {
   justify-content: space-between;
   position: relative;
   transition: 0.2s;
+  height: 340px;
+  width: 309px;
 }
 
 .Projects-div:hover {
   background: #1b1637;
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);
 }
 
 .Projects-div:hover .title {
@@ -433,8 +439,9 @@ ul li::before {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  transition: .2s;
+  transition: 0.2s;
   color: #b2a8ee;
+  padding: 1rem 0;
 }
 
 .Contact a:hover {
@@ -447,5 +454,31 @@ ul li::before {
   color: #ffffff;
   text-align: center;
   font-weight: 400;
-  opacity: .5;
+  opacity: 0.5;
+}
+
+.Photographer-wrapper {
+  opacity: 0;
+  animation: fadeInDown 0.2s 0.1s forwards;
+  display: flex;
+  margin-top: 6rem;
+  margin-bottom: 3rem;
+  gap: 24px;
+  align-items: center;
+}
+
+.Iframe {
+  opacity: 0;
+  animation: fadeInUp 0.2s .5s forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(3%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
 }

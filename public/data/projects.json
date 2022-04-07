@@ -14,5 +14,13 @@
     "stack": "React, JS, CSS",
     "link": "https://www.victorsantos.work/",
     "repo": "https://github.com/victorgaard/portfolio"
+  },
+  {
+    "id": 3,
+    "title": "GitShowcase",
+    "description": "Plug-and-play portfolio for developers to showcase their projects in a way that is easy to understand.",
+    "stack": "Design, Figma",
+    "link": "https://www.gitshowcase.com/",
+    "repo": "https://github.com/gitshowcase/gitshowcase"
   }
 ]
