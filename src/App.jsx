@@ -35,6 +35,7 @@ function App() {
   // Wait first animation to end,
   // then render the input content
   useEffect(() => {
+    // eslint-disable-next-line no-console
     console.log("primeiro useEffect rolando");
     getProjects();
 
