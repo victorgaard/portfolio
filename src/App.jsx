@@ -9,10 +9,35 @@ function App() {
   const [searchResults, setSearchResults] = useState(false);
   const [frontend, setFrontend] = useState(false);
   const [photographer, setPhotographer] = useState(false);
+  const [projects, setProjects] = useState();
+
+  // Get the projects list
+  const getProjects = async () => {
+    const url = "./data/projects.json";
+    const options = {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    };
+    try {
+      const response = await fetch(url, options);
+
+      if (response.ok) {
+        const responseJson = await response.json();
+        setProjects(await responseJson);
+      }
+    } catch (error) {
+      throw new Error(error);
+    }
+  };
 
   // Wait first animation to end,
   // then render the input content
   useEffect(() => {
+    console.log("primeiro useEffect rolando");
+    getProjects();
+
     let timeout;
     setTimeout(() => {
       setAnimationEnd(true);
@@ -106,7 +131,7 @@ function App() {
                 As you can probably tell, my name is Victor.
               </p>
 
-              <p className="paragraph">
+              <p>
                 I&apos;m a creative front-end developer passionate about user
                 experience. I love crafting creative, fluid and functional web
                 applications.
@@ -120,17 +145,65 @@ function App() {
 
           <div className="Frontend-div">
             <h4>About me</h4>
+            <p>
+              I&apos;m an optimistic nihilist and lifelong learner who also
+              happens to design and code. Product Designer turned Front-end
+              Engineer after 7 years of experience in UX &amp; Product Design
+              building SaaS products. Apart from tech, my passion lies in
+              landscape photography.
+            </p>
+            <p>
+              In my free time, you will find me: Listening to weird metal bands,
+              enjoying life with my best half, landscape photographing,
+              traveling, cooking, and working on side projects like&nbsp;
+              <a
+                href="https://weather.victorsantos.work"
+                target="_blank"
+                rel="noreferrer"
+              >
+                mighty weather
+              </a>
+              &nbsp;and&nbsp;
+              <a
+                href="https://www.gitshowcase.com"
+                target="_blank"
+                rel="noreferrer"
+              >
+                gitshowcase
+              </a>
+            </p>
           </div>
 
           <div className="Frontend-div">
-            <h4>About me</h4>
+            <h4>Technologies</h4>
+            <p>
+              Here are a few technologies I&apos;ve been working with recently:
+            </p>
+            <ul>
+              <li>JavaScript (ES6+)</li>
+              <li>ReactJS</li>
+              <li>HTML</li>
+              <li>CSS</li>
+            </ul>
+          </div>
+
+          <div className="Frontend-div">
+            <h4>Projects</h4>
+            {projects &&
+              projects.map((project) => (
+                <p key={project.id}>{project.greeting1}</p>
+              ))}
+          </div>
+
+          <div className="Frontend-div">
+            <h4>Get in touch</h4>
           </div>
         </div>
       )}
 
       {photographer && (
         <div className="Photographer">
-          <p className="paragraph">
+          <p>
             Come back sometime soon, my friend. Meanwhile, feel free to check my
             Instagram account&nbsp;@
             <a

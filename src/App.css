@@ -1,3 +1,7 @@
+body {
+  counter-reset: section;
+}
+
 .App {
   width: 650px;
   margin: 0 auto;
@@ -6,17 +10,39 @@
 .Header-wrapper {
   display: flex;
   margin-top: 1.5rem;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .Back-button {
   flex-shrink: 0;
-  width: 165px;
+  width: 125px;
 }
 
 .Back-button button {
+  opacity: 0;
   width: 100%;
-  padding: 22px 24px;
+  padding: 22px 0;
+  background: transparent;
+  border-radius: 50px;
+  color: #b2a8ee;
+  cursor: pointer;
+  transition: 0.2s;
+  animation: fadeInDown 0.2s forwards;
+}
+
+.Back-button button:hover {
+  background: #221c44;
+}
+
+.Back-button button::before {
+  content: "<-";
+  padding-right: 8px;
+  transition: 0.2s;
+}
+
+.Back-button button:hover::before {
+  content: "<-";
+  padding-right: 16px;
 }
 
 .App-search {
@@ -200,7 +226,7 @@
 .Search-results--inner button::before {
   content: "->";
   opacity: 0;
-  text-decoration: #0F0B21 wavy underline;
+  text-decoration: #0f0b21 wavy underline;
 }
 
 .Search-results--inner button:hover::before {
@@ -219,45 +245,94 @@
   border-radius: 50%;
 }
 
-.Frontend-div {
-  margin-top: 6rem;
-}
-
 .Photographer {
   text-align: center;
 }
 
+.Frontend a,
 .Photographer a {
-  color: #A8EEEE;
+  color: #a8eeee;
   text-decoration: none;
 }
-
+.Frontend a:hover,
 .Photographer a:hover {
-  text-decoration: #A8EEEE wavy underline;
+  text-decoration: #a8eeee wavy underline;
 }
 
 .Frontend-wrapper {
+  opacity: 0;
   display: flex;
-  margin-top: 10rem;
+  margin-top: 6rem;
   gap: 24px;
+  animation: fadeInDown 0.2s 0.1s forwards;
 }
 
 .Frontend-wrapper h3 {
-  color: #A8EEEE;
+  color: #a8eeee;
   font-size: 3rem;
 }
 
-.subtitle {
-  color: #B2A8EE;
-  margin-top: .5rem;
+.Frontend p,
+.Photographer p {
+  color: #ffffff;
+  line-height: 1.8rem;
+  margin-top: 1.5rem;
+  font-weight: 500;
+  opacity: 0.84;
 }
 
-.paragraph {
-  color: #ffffff;
-  line-height: 1.5rem;
-  margin-top: 1.5rem;
+.Frontend-wrapper .subtitle {
+  color: #b2a8ee;
+  font-weight: 700;
+  margin-top: 0.5rem;
+  opacity: 1;
+}
+
+.Frontend-div {
+  margin-top: 8rem;
+  opacity: 0;
+  animation: fadeInDown 0.2s 0.2s forwards;
 }
 
 h4 {
   font-size: 2rem;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+h4::before {
+  counter-increment: section;
+  content: "0" counter(section) ".";
+  position: relative;
+  padding-right: 1rem;
+  font-size: 1.35rem;
+  color: #a8eeee;
+}
+
+h4::after {
+  content: "";
+  position: relative;
+  height: 1px;
+  background: #a8eeee;
+  width: 100%;
+  display: block;
+  margin-left: 1rem;
+  opacity: 0.3;
+}
+
+ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(140px, 200px));
+  gap: 0px 10px;
+  padding: 0px;
+  margin: 20px 0px 0px;
+  overflow: hidden;
+  line-height: 1.8rem;
+}
+
+ul li::before {
+  content: "->";
+  padding-right: 1rem;
+  color: #a8eeee;
 }
