@@ -371,6 +371,9 @@ function App() {
               </a>
             </div>
           </section>
+          <footer className="Footer">
+            <p>Designed &amp; Built by Victor Santos🐧</p>
+          </footer>
         </section>
       )}
 
@@ -407,9 +410,6 @@ function App() {
           />
         </div>
       )}
-      <footer className="Footer">
-        <p>Designed &amp; Built by Victor Santos 🐧</p>
-      </footer>
     </div>
   );
 }
