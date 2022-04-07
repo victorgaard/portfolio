@@ -294,6 +294,10 @@ body {
   animation: fadeInDown 0.2s 0.2s forwards;
 }
 
+.Frontend-div:last-child {
+  margin: 8rem 0;
+}
+
 h4 {
   font-size: 2rem;
   display: flex;
@@ -324,7 +328,7 @@ h4::after {
 ul {
   display: grid;
   grid-template-columns: repeat(2, minmax(140px, 200px));
-  gap: 0px 10px;
+  gap: 0px 8px;
   padding: 0px;
   margin: 20px 0px 0px;
   overflow: hidden;
@@ -335,4 +339,113 @@ ul li::before {
   content: "->";
   padding-right: 1rem;
   color: #a8eeee;
+}
+
+.Projects {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 0px;
+  margin: 2.5rem 0 0 0;
+  line-height: 1.8rem;
+  position: relative;
+  height: 100%;
+}
+
+.Projects a {
+  display: flex;
+}
+
+.Projects a:hover {
+  text-decoration: none;
+}
+
+.Projects-div {
+  background: #221c44;
+  padding: 1.75rem 1.85rem 1.85rem 1.85rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  transition: 0.2s;
+}
+
+.Projects-div:hover {
+  background: #1b1637;
+}
+
+.Projects-div:hover .title {
+  color: #a8eeee;
+}
+
+.Projects-div p:first-child {
+  margin: 0;
+}
+
+.Projects-div .title {
+  opacity: 1;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  transition: 0.2s;
+}
+
+.Projects-div p {
+  margin-top: 1rem;
+  opacity: 0.65;
+}
+
+.Projects-div .stack {
+  opacity: 0.85;
+  font-size: 0.85rem;
+  color: #b2a8ee;
+}
+
+.Projects-div footer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+  gap: 0.5rem;
+}
+
+.Projects-div footer .icons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.Projects-div footer a {
+  color: #b2a8ee;
+  transition: 0.2s;
+}
+
+.Projects-div footer a:hover {
+  color: #a8eeee;
+}
+
+.Contact {
+  display: flex;
+  margin: 3rem 0;
+  gap: 3rem;
+}
+
+.Contact a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: .2s;
+  color: #b2a8ee;
+}
+
+.Contact a:hover {
+  text-decoration: none;
+  color: #a8eeee;
+}
+
+.Footer {
+  margin: 1rem 0 4rem 0;
+  color: #ffffff;
+  text-align: center;
+  font-weight: 400;
+  opacity: .5;
 }

@@ -1,14 +1,18 @@
 [
   {
     "id": 1,
-    "greeting1": "(fr)choose an emoticon",
-    "addPhoto1": "(fr)add photo",
-    "close1": "(fr)close"
+    "title": "Mighty Weather App",
+    "description": "Mighty Weather App is a React App I created to practice my UI skills and React Hooks.",
+    "stack": "React, JS, Open Weather API, CSS",
+    "link": "https://weather.victorsantos.work/",
+    "repo": "https://github.com/victorgaard/mighty-weather"
   },
   {
     "id": 2,
-    "greeting1": "(fr)choose an emoticon",
-    "addPhoto1": "(fr)add photo",
-    "close1": "(fr)close"
+    "title": "Victor Santos Portfolio",
+    "description": "Personal website built with React and custom animations.",
+    "stack": "React, JS, CSS",
+    "link": "https://www.victorsantos.work/",
+    "repo": "https://github.com/victorgaard/portfolio"
   }
 ]
