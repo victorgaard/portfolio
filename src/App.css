@@ -509,7 +509,7 @@ ul li::before {
   }
 
   .App-search {
-    margin-top: 40vh;
+    margin-top: 35vh;
   }
 
   .Back-button {
@@ -608,7 +608,7 @@ ul li::before {
 
   @keyframes moveTop {
     from {
-      margin-top: 40vh;
+      margin-top: 35vh;
     }
     to {
       margin-top: 0;
