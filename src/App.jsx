@@ -54,7 +54,7 @@ function App() {
     let timeout;
     setTimeout(() => {
       setSearchResults(true);
-    }, 4200);
+    }, 4300);
 
     return () => {
       clearInterval(timeout);

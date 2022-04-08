@@ -198,7 +198,7 @@ body {
   color: #ca7786;
   font-weight: 700;
   opacity: 0;
-  animation: fadeInDown 0.3s 0.1s forwards;
+  animation: fadeInDown 0.2s 0.1s forwards;
 }
 
 .Search-results--inner button {
@@ -212,7 +212,7 @@ body {
   padding: 1rem 2rem;
   border-radius: 50px;
   white-space: nowrap;
-  animation: fadeInDown 0.2s 0.2s forwards;
+  animation: fadeInDown 0.3s 0.2s forwards;
 }
 
 .Search-results--inner button:hover {
