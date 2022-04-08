@@ -62,7 +62,7 @@ function Frontend({ frontend }) {
             <p>
               I&apos;m an optimistic nihilist and lifelong learner who also
               happens to design and code. Product Designer turned Front-end
-              Engineer after 7 years of experience in UX &amp; Product Design
+              Developer after 7 years of experience in UX &amp; Product Design
               building SaaS products. Apart from tech, my passion lies in
               landscape photography.
             </p>
