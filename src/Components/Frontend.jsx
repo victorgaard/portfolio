@@ -107,8 +107,14 @@ function Frontend({ frontend }) {
             <div className="Projects">
               {projects &&
                 projects.map((project) => (
-                  <a href={project.link} target="_blank" rel="noreferrer">
-                    <div className="Projects-div" key={project.id}>
+                  <a
+                    className="Anchor-wrapper"
+                    key={project.id}
+                    href={project.link}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <div className="Projects-div">
                       <header>
                         <p className="stack">{project.stack}</p>
                         <p className="title">{project.title}</p>

@@ -635,6 +635,10 @@ ul li::before {
     height: 320px;
   }
 
+  .Projects .Anchor-wrapper {
+    width: 100%;
+  }
+
   ul {
     margin-top: 2rem;
     gap: 1rem 1rem;
