@@ -7,6 +7,10 @@ body {
   margin: 0 auto;
 }
 
+.Hidden-lg {
+  display: none;
+}
+
 .Header-wrapper {
   display: flex;
   margin-top: 1.5rem;
@@ -331,7 +335,7 @@ h4::after {
 
 ul {
   display: grid;
-  grid-template-columns: repeat(2, minmax(140px, 200px));
+  grid-template-columns: repeat(2, minmax(140px, 250px));
   gap: 0px 8px;
   padding: 0px;
   margin: 20px 0px 0px;
@@ -340,7 +344,7 @@ ul {
 }
 
 ul li::before {
-  content: "->";
+  content: "♜";
   padding-right: 1rem;
   color: #a8eeee;
 }
@@ -484,15 +488,49 @@ ul li::before {
 }
 
 @media only screen and (max-width: 800px) {
+  .Hidden-xs {
+    display: none;
+  }
+
+  .Hidden-lg {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .Hidden-lg img {
+    width: 150px;
+    height: 150px;
+  }
+
   .App {
     width: 100vw;
     max-width: 100vw;
     padding: 0 1.5rem;
   }
 
+  .App-search {
+    margin-top: 40vh;
+  }
+
+  .Back-button {
+    width: 70px;
+  }
+
+  .Back-button button {
+    padding: 1rem 0;
+  }
+
+  .Back-button button:hover {
+    background: transparent;
+  }
+
   .Header-wrapper {
     gap: 0;
     flex-direction: column;
+  }
+
+  .Header-wrapper div:nth-child(2) {
+    visibility: hidden;
   }
 
   .App-search {
@@ -523,6 +561,10 @@ ul li::before {
     gap: 1.25rem;
   }
 
+  .Search-results--inner p {
+    color: #a8eeee;
+  }
+
   .Search-results--inner div:nth-child(2) {
     display: flex;
     flex-direction: column;
@@ -537,7 +579,8 @@ ul li::before {
     line-height: 1.95rem;
     white-space: normal;
     text-align: left;
-    background: #221c44;
+    background: #a8eeee;
+    color: #0f0b21;
   }
 
   .Search-results--inner button::before {
@@ -563,8 +606,67 @@ ul li::before {
     }
   }
 
+  @keyframes moveTop {
+    from {
+      margin-top: 40vh;
+    }
+    to {
+      margin-top: 0;
+    }
+  }
+
   .Frontend-wrapper,
   .Photographer-wrapper {
     flex-direction: column;
+    margin-top: -2.25rem;
+  }
+
+  .Frontend-wrapper h3,
+  .Photographer-wrapper h3 {
+    font-size: 2.5rem;
+  }
+
+  .Frontend-div {
+    margin-top: 5rem;
+  }
+
+  .Projects-div {
+    width: 100%;
+    height: 320px;
+  }
+
+  ul {
+    margin-top: 2rem;
+    gap: 1rem 1rem;
+  }
+
+  ul li::before {
+    padding-right: 0.5rem;
+  }
+
+  .Contact {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .Contact a {
+    width: 100%;
+    justify-content: center;
+    background: #a8eeee;
+    color: #0f0b21;
+    border-radius: 0.5rem;
+  }
+
+  .Contact a:hover {
+    color: #0f0b21;
+  }
+
+  .Footer {
+    margin: 4rem 0;
+  }
+
+  .Iframe iframe {
+    height: 1200px !important;
+    margin-top: 0.5rem !important;
   }
 }

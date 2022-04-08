@@ -124,6 +124,9 @@ function App() {
       {frontend && (
         <section className="Frontend">
           <section className="Frontend-wrapper">
+            <div className="Hidden-lg">
+              <img src={Avatar} alt="Avatar" />
+            </div>
             <div>
               <h3>Olá, tudo bom?</h3>
 
@@ -138,7 +141,7 @@ function App() {
               </p>
             </div>
 
-            <div>
+            <div className="Hidden-xs">
               <img src={Avatar} alt="Avatar" />
             </div>
           </section>
@@ -163,7 +166,7 @@ function App() {
               >
                 mighty weather
               </a>
-              &nbsp;and&nbsp;
+              &nbsp; and &nbsp;
               <a
                 href="https://www.gitshowcase.com"
                 target="_blank"
