@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import gallery from "./util/gallery";
 import modalOps from "./util/modalOps";
@@ -9,6 +9,17 @@ function Photographer({ photographer }) {
   const [imgSrc, setImgSrc] = useState("");
   const [title, setTitle] = useState("");
   const [location, setLocation] = useState("");
+
+  const handleBack = () => {
+    setModal(false);
+    modalOps("close");
+  };
+
+  useEffect(() => {
+    if (modal) {
+      window.onpopstate = handleBack;
+    }
+  }, [modal]);
 
   return (
     <section className="Photographer">

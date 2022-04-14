@@ -62,7 +62,7 @@ const Iceland = [
     "Twilight of the rainbow god",
     "Snæfellsnesvegur (Iceland)",
   ],
-  [14, photos[3], "normal", "The waterfall of the gods.", "Goðafoss (Iceland)"],
+  [14, photos[3], "normal", "The waterfall of the gods", "Goðafoss (Iceland)"],
   [
     15,
     photos[26],
