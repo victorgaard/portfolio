@@ -85,7 +85,7 @@ const Finland = [
   [4, photos[31], "special", "Primal darkness", "Utsjoki (Finland)"],
   [5, photos[35], "normal", "Being one with everything", "Utsjoki (Finland)"],
   [6, photos[33], "normal", "The finite infinite", "Utsjoki (Finland)"],
-  [7, photos[34], "normal", "Stream of consciousness", "Hvalnes (Iceland)"],
+  [7, photos[34], "normal", "Stream of consciousness", "Utsjoki (Finland)"],
 ];
 
 const gallery = [Iceland, Finland];
