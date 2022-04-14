@@ -179,10 +179,10 @@ body {
 }
 
 .Search-results--inner {
-  margin-top: 48px;
+  margin-top: 3rem;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0.5rem;
 }
 
 .Search-results--inner div:nth-child(1) {
@@ -292,16 +292,33 @@ body {
   opacity: 1;
 }
 
-.Frontend-div,
-.Photographer-div {
-  margin-top: 8rem;
+.Frontend-div {
+  margin: 8rem 0;
   opacity: 0;
   animation: fadeInDown 0.2s 0.2s forwards;
 }
 
-.Frontend-div:last-child,
-.Photographer-div:last-child {
-  margin: 8rem 0;
+.Photographer-div--header {
+  opacity: 0;
+  animation: fadeInDown 0.2s 0.2s forwards;
+}
+
+.Photographer .img-grid img {
+  opacity: 0;
+  animation: fade 0.2s 0.5s forwards;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.Photographer-div {
+  margin: 6rem 0;
 }
 
 h4 {
@@ -570,7 +587,7 @@ ul li::before {
   transform: scale(1);
 }
 
-.modal img {
+.modal.open img {
   margin: 0 auto;
   box-sizing: border-box;
   display: block;
@@ -579,6 +596,9 @@ ul li::before {
   height: auto;
   max-height: 100%;
   line-height: 0;
+  pointer-events: none;
+  opacity: 0;
+  animation: fadeInDown .2s .2s forwards;
 }
 
 .open body {
@@ -603,7 +623,10 @@ ul li::before {
   display: none;
 }
 
-
+.infos .alpha {
+  opacity: 0.5;
+  text-align: right;
+}
 
 @media only screen and (max-width: 800px) {
   .img-wrapper:hover > .content.fade {
@@ -763,6 +786,10 @@ ul li::before {
 
   .Projects .Anchor-wrapper {
     width: 100%;
+  }
+
+  .modal {
+    transition: none;
   }
 
   ul {
