@@ -565,7 +565,6 @@ ul li::before {
   z-index: 10;
   width: 100%;
   height: 100vh;
-  visibility: hidden;
   opacity: 0;
   transform: scale(0);
   background: #000000;
@@ -577,12 +576,10 @@ ul li::before {
   align-items: center;
   cursor: pointer;
   overflow: hidden;
-  transition: opacity 0.2s ease, visibility 0.2s ease,
-    transform 0.2s ease-in-out;
+  transition: transform 0.2s;
 }
 
 .modal.open {
-  visibility: visible;
   opacity: 1;
   transform: scale(1);
 }
@@ -598,7 +595,18 @@ ul li::before {
   line-height: 0;
   pointer-events: none;
   opacity: 0;
-  animation: fadeInDown .2s .2s forwards;
+  animation: fadeInDownImg 0.2s 0.2s forwards;
+}
+
+@keyframes fadeInDownImg {
+  from {
+    transform: translateY(-2%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .open body {
@@ -607,6 +615,7 @@ ul li::before {
 }
 
 .infos {
+  opacity: 0;
   position: relative;
   display: flex;
   gap: 2rem;
@@ -626,6 +635,10 @@ ul li::before {
 .infos .alpha {
   opacity: 0.5;
   text-align: right;
+}
+
+.open .infos {
+  animation: fadeInDown 0.2s 0.3s forwards;
 }
 
 @media only screen and (max-width: 800px) {
@@ -786,10 +799,6 @@ ul li::before {
 
   .Projects .Anchor-wrapper {
     width: 100%;
-  }
-
-  .modal {
-    transition: none;
   }
 
   ul {
