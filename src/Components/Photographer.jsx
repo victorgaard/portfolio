@@ -19,7 +19,7 @@ function Photographer({ photographer }) {
               <img src={AvatarNature} alt="Avatar" />
             </div>
             <div>
-              <h3>Join me in the quest for beauty</h3>
+              <h3>Diaries from a wanderer</h3>
 
               <p className="subtitle">
                 A landscape photographer &amp; filmmaker in the making.
@@ -96,7 +96,6 @@ function Photographer({ photographer }) {
                     setLocation(item[4]);
                     modalOps("open");
                   }}
-                  style={{}}
                   aria-hidden="true"
                 >
                   <img
@@ -151,24 +150,26 @@ function Photographer({ photographer }) {
           </section>
 
           <section className="Photographer-div">
-            <h4>Get in touch</h4>
-            <p>Don&apos;t be a stranger. Let&apos;s connect:</p>
-            <div className="Contact">
-              <a
-                href="https://github.com/victorgaard"
-                target="_blank"
-                rel="noreferrer"
-              >
+            <div className="Photographer-div--header">
+              <h4>Sápmi</h4>
+              <p className="subtitle">
                 <svg
-                  width="22"
-                  height="22"
-                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 25"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g clipPath="url(#clip0_42_15)">
+                  <g clipPath="url(#clip0_62_38)">
                     <path
-                      d="M16 21.9999V18.1299C16.0375 17.6531 15.9731 17.1737 15.811 16.7237C15.6489 16.2737 15.3929 15.8634 15.06 15.5199C18.2 15.1699 21.5 13.9799 21.5 8.51994C21.4997 7.12376 20.9627 5.78114 20 4.76994C20.4559 3.54844 20.4236 2.19829 19.91 0.999938C19.91 0.999938 18.73 0.649938 16 2.47994C13.708 1.85876 11.292 1.85876 9 2.47994C6.27 0.649938 5.09 0.999938 5.09 0.999938C4.57638 2.19829 4.54414 3.54844 5 4.76994C4.03013 5.78864 3.49252 7.1434 3.5 8.54994C3.5 13.9699 6.8 15.1599 9.94 15.5499C9.611 15.8899 9.35726 16.2953 9.19531 16.7399C9.03335 17.1844 8.96681 17.658 9 18.1299V21.9999M9 18.9999C4 20.4999 4 16.4999 2 15.9999L9 18.9999Z"
+                      d="M21 10.5C21 17.5 12 23.5 12 23.5C12 23.5 3 17.5 3 10.5C3 8.11305 3.94821 5.82387 5.63604 4.13604C7.32387 2.44821 9.61305 1.5 12 1.5C14.3869 1.5 16.6761 2.44821 18.364 4.13604C20.0518 5.82387 21 8.11305 21 10.5Z"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M12 13.5C13.6569 13.5 15 12.1569 15 10.5C15 8.84315 13.6569 7.5 12 7.5C10.3431 7.5 9 8.84315 9 10.5C9 12.1569 10.3431 13.5 12 13.5Z"
                       stroke="currentColor"
                       strokeWidth="2"
                       strokeLinecap="round"
@@ -176,15 +177,144 @@ function Photographer({ photographer }) {
                     />
                   </g>
                   <defs>
-                    <clipPath id="clip0_42_15">
-                      <rect width="22" height="22" />
+                    <clipPath id="clip0_62_38">
+                      <rect
+                        width="24"
+                        height="24"
+                        fill="white"
+                        transform="translate(0 0.5)"
+                      />
                     </clipPath>
                   </defs>
                 </svg>
-                GitHub
+                &nbsp;Finnish Lapland&nbsp;&nbsp;&nbsp;&nbsp;October 2021
+              </p>
+              <p>
+                One week roadtrip to hunt for the northern lights in the Finnish
+                Lapland, inside the arctic circle.
+              </p>
+              <p>
+                There were tons of preparations from our side to make it happen.
+                Picking the best location, specific dates, checking all
+                forecasts, everything possible to increase the odds of success.
+              </p>
+              <p>
+                It all comes down to luck in the end. If you ever chased the
+                northern lights, you know how cruel this factor can be.
+              </p>
+              <p>
+                But in the end, you only need to have luck once. And we did! The
+                cosmos smiled at us.
+              </p>
+            </div>
+            <div className="img-grid">
+              {gallery[1].map((item) => (
+                <div
+                  key={item[0]}
+                  className={
+                    item[2] === "normal" ? "img-wrapper" : "img-wrapper special"
+                  }
+                  onClick={() => {
+                    setModal(true);
+                    setImgSrc(item[1]);
+                    setTitle(item[3]);
+                    setLocation(item[4]);
+                    modalOps("open");
+                  }}
+                  aria-hidden="true"
+                >
+                  <img
+                    className="zoom"
+                    src={item[1]}
+                    alt={item[3]}
+                    loading="lazy"
+                  />
+                  <div className="content fade">
+                    <span>{item[3]}</span>
+                    <span className="location">
+                      <svg
+                        width="12"
+                        height="12"
+                        viewBox="0 0 24 25"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g clipPath="url(#clip0_62_38)">
+                          <path
+                            d="M21 10.5C21 17.5 12 23.5 12 23.5C12 23.5 3 17.5 3 10.5C3 8.11305 3.94821 5.82387 5.63604 4.13604C7.32387 2.44821 9.61305 1.5 12 1.5C14.3869 1.5 16.6761 2.44821 18.364 4.13604C20.0518 5.82387 21 8.11305 21 10.5Z"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                          <path
+                            d="M12 13.5C13.6569 13.5 15 12.1569 15 10.5C15 8.84315 13.6569 7.5 12 7.5C10.3431 7.5 9 8.84315 9 10.5C9 12.1569 10.3431 13.5 12 13.5Z"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_62_38">
+                            <rect
+                              width="24"
+                              height="24"
+                              fill="white"
+                              transform="translate(0 0.5)"
+                            />
+                          </clipPath>
+                        </defs>
+                      </svg>
+                      {item[4]}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section className="Photographer-div">
+            <h4>Stay tuned</h4>
+            <div className="Contact">
+              <a
+                href="https://www.instagram.com/hunter.graphy/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M17 2.5H7C4.23858 2.5 2 4.73858 2 7.5V17.5C2 20.2614 4.23858 22.5 7 22.5H17C19.7614 22.5 22 20.2614 22 17.5V7.5C22 4.73858 19.7614 2.5 17 2.5Z"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M16.0002 11.8701C16.1236 12.7023 15.9815 13.5523 15.594 14.2991C15.2065 15.0459 14.5933 15.6515 13.8418 16.0297C13.0903 16.408 12.2386 16.5397 11.408 16.406C10.5773 16.2723 9.80996 15.8801 9.21503 15.2852C8.62011 14.6903 8.22793 13.9229 8.09426 13.0923C7.9606 12.2616 8.09226 11.41 8.47052 10.6584C8.84878 9.90691 9.45438 9.2938 10.2012 8.9063C10.948 8.5188 11.7979 8.37665 12.6302 8.50006C13.4791 8.62594 14.265 9.02152 14.8719 9.62836C15.4787 10.2352 15.8743 11.0211 16.0002 11.8701Z"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M17.5 7H17.51"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                Instagram
               </a>
               <a
-                href="https://www.linkedin.com/in/victor-ferreira-santos/"
+                href="https://huntergraphy.picfair.com/"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -196,57 +326,28 @@ function Photographer({ photographer }) {
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8V8Z"
+                    d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
                   <path
-                    d="M6 9H2V21H6V9Z"
+                    d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
                   <path
-                    d="M4 6C5.10457 6 6 5.10457 6 4C6 2.89543 5.10457 2 4 2C2.89543 2 2 2.89543 2 4C2 5.10457 2.89543 6 4 6Z"
+                    d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
                 </svg>
-                LinkedIn
-              </a>
-              <a
-                href="mailto:hey@victorsantos.work"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <svg
-                  width="22"
-                  height="22"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M22 6L12 13L2 6"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-                Email
+                Store
               </a>
             </div>
           </section>
@@ -256,12 +357,12 @@ function Photographer({ photographer }) {
           </footer>
           <div
             className={modal ? "modal open" : "modal"}
+            aria-hidden="true"
             onClick={() => {
               setModal(false);
               setImgSrc("");
               modalOps("close");
             }}
-            aria-hidden="true"
           >
             <img src={imgSrc} alt={title} />
             <div className="infos hidden-flex">

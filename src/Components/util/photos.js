@@ -24,6 +24,15 @@ import Photo23 from "../../assets/photos/23.jpg";
 import Photo24 from "../../assets/photos/24.jpg";
 import Photo25 from "../../assets/photos/25.jpg";
 import Photo26 from "../../assets/photos/26.jpg";
+import Photo27 from "../../assets/photos/27.jpg";
+import Photo28 from "../../assets/photos/28.jpg";
+import Photo29 from "../../assets/photos/29.jpg";
+import Photo30 from "../../assets/photos/30.jpg";
+import Photo31 from "../../assets/photos/31.jpg";
+import Photo32 from "../../assets/photos/32.jpg";
+import Photo33 from "../../assets/photos/33.jpg";
+import Photo34 from "../../assets/photos/34.jpg";
+import Photo35 from "../../assets/photos/35.jpg";
 
 const photos = [
   Photo01,
@@ -53,6 +62,15 @@ const photos = [
   Photo24,
   Photo25,
   Photo26,
+  Photo27,
+  Photo28,
+  Photo29,
+  Photo30,
+  Photo31,
+  Photo32,
+  Photo33,
+  Photo34,
+  Photo35,
 ];
 
 export default photos;

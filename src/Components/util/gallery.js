@@ -72,6 +72,22 @@ const Iceland = [
   ],
 ];
 
-const gallery = [Iceland];
+const Finland = [
+  [1, photos[32], "normal", "Cosmic hands", "Utsjoki (Finland)"],
+  [2, photos[19], "normal", "Tornado of souls", "Utsjoki (Finland)"],
+  [
+    3,
+    photos[18],
+    "normal",
+    "Our rainbow seems to be broken",
+    "Utsjoki (Finland)",
+  ],
+  [4, photos[31], "special", "Primal darkness", "Utsjoki (Finland)"],
+  [5, photos[35], "normal", "Being one with everything", "Utsjoki (Finland)"],
+  [6, photos[33], "normal", "The finite infinite", "Utsjoki (Finland)"],
+  [7, photos[34], "normal", "Stream of consciousness", "Hvalnes (Iceland)"],
+];
+
+const gallery = [Iceland, Finland];
 
 export default gallery;
