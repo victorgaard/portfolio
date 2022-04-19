@@ -4,6 +4,7 @@ import Home from "./Components/Home";
 import Developer from "./Components/Developer";
 import Photographer from "./Components/Photographer";
 import Search from "./assets/search.svg";
+import "./reset.css";
 import "./App.css";
 
 function App() {
@@ -33,6 +34,25 @@ function App() {
             path="/photographer"
             element={
               <Photographer
+                setShouldAnimate={setShouldAnimate}
+                Search={Search}
+              />
+            }
+          />
+          <Route
+            path="/photographer/*"
+            element={
+              <Photographer
+                setShouldAnimate={setShouldAnimate}
+                Search={Search}
+              />
+            }
+          />
+          <Route
+            path="*"
+            element={
+              <Home
+                shouldAnimate={shouldAnimate}
                 setShouldAnimate={setShouldAnimate}
                 Search={Search}
               />
