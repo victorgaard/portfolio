@@ -527,6 +527,10 @@ ul li::before {
   border-radius: 1rem;
 }
 
+.img-wrapper:hover {
+  color: #ffffff;
+}
+
 .img-wrapper > img {
   display: block;
   width: 100%;
