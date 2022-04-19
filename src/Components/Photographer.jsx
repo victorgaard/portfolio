@@ -5,7 +5,9 @@ import trips from "./util/trips";
 import modalOps from "./util/modalOps";
 import AvatarNature from "../assets/avatar-nature.jpg";
 
-function Photographer({ Search, setShouldAnimate, modal, setModal }) {
+function Photographer({ Search, setShouldAnimate, setModal }) {
+  // Generate a friendly URL path based
+  // on image title, location and id
   const prettify = (string) => {
     return string
       .toLowerCase()
@@ -21,10 +23,8 @@ function Photographer({ Search, setShouldAnimate, modal, setModal }) {
   };
 
   useEffect(() => {
-    if (modal) {
-      window.onpopstate = handleBack;
-    }
-  }, [modal]);
+    window.onpopstate = handleBack;
+  }, []);
 
   return (
     <>
@@ -181,7 +181,6 @@ function Photographer({ Search, setShouldAnimate, modal, setModal }) {
 Photographer.propTypes = {
   Search: PropTypes.string.isRequired,
   setShouldAnimate: PropTypes.func.isRequired,
-  modal: PropTypes.bool.isRequired,
   setModal: PropTypes.func.isRequired,
 };
 

@@ -1,4 +1,6 @@
 export default function modalOps(param) {
+  // Adjust the browser scrollbar to avoid
+  // flickering during modal toggle
   const body = document.querySelector("body");
   if (param === "open") {
     body.style.overflow = "hidden";

@@ -12,6 +12,8 @@ function Modal({ modal, setModal }) {
   const { country } = useParams();
   const { id } = useParams();
 
+  // Get url params and compare with
+  // trips.js to get the right image
   const getPicture = () => {
     const countryChecker = trips.find((trip) => {
       return trip.location.toLowerCase() === country;
@@ -22,8 +24,8 @@ function Modal({ modal, setModal }) {
     });
 
     setImgSrc(idChecker[1]);
-    setLocation(idChecker[4]);
     setTitlePhoto(idChecker[3]);
+    setLocation(idChecker[4]);
   };
 
   useEffect(() => {

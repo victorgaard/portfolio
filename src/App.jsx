@@ -38,7 +38,6 @@ function App() {
               <Photographer
                 setShouldAnimate={setShouldAnimate}
                 Search={Search}
-                modal={modal}
                 setModal={setModal}
               />
             }
@@ -50,7 +49,6 @@ function App() {
                 <Photographer
                   setShouldAnimate={setShouldAnimate}
                   Search={Search}
-                  modal={modal}
                   setModal={setModal}
                 />
                 <Modal modal={modal} setModal={setModal} />
