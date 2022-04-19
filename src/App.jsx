@@ -1,37 +1,45 @@
 import React, { useState } from "react";
-import Header from "./Components/Header";
-import SearchResults from "./Components/SearchResults";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./Components/Home";
 import Frontend from "./Components/Frontend";
 import Photographer from "./Components/Photographer";
+import Search from "./assets/search.svg";
 import "./App.css";
 
 function App() {
-  const [title, setTitle] = useState("product designer");
-  const [searchResults, setSearchResults] = useState(false);
-  const [frontend, setFrontend] = useState(false);
-  const [photographer, setPhotographer] = useState(false);
+  const [shouldAnimate, setShouldAnimate] = useState(true);
 
   return (
     <div className="App">
-      <Header
-        setSearchResults={setSearchResults}
-        setFrontend={setFrontend}
-        setPhotographer={setPhotographer}
-        title={title}
-        setTitle={setTitle}
-      />
-
-      <SearchResults
-        searchResults={searchResults}
-        setSearchResults={setSearchResults}
-        setFrontend={setFrontend}
-        setPhotographer={setPhotographer}
-        setTitle={setTitle}
-      />
-
-      <Frontend frontend={frontend} />
-
-      <Photographer photographer={photographer} />
+      <Router>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Home
+                shouldAnimate={shouldAnimate}
+                setShouldAnimate={setShouldAnimate}
+                Search={Search}
+              />
+            }
+          />
+          <Route
+            path="/frontend"
+            element={
+              <Frontend setShouldAnimate={setShouldAnimate} Search={Search} />
+            }
+          />
+          <Route
+            path="/photographer"
+            element={
+              <Photographer
+                setShouldAnimate={setShouldAnimate}
+                Search={Search}
+              />
+            }
+          />
+        </Routes>
+      </Router>
     </div>
   );
 }

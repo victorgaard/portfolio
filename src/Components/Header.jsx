@@ -1,14 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import Search from "../assets/search.svg";
 
-function Header({
-  setSearchResults,
-  setFrontend,
-  setPhotographer,
-  title,
-  setTitle,
-}) {
+function Header({ Search, shouldAnimate }) {
   const [animationEnd, setAnimationEnd] = useState(false);
 
   // Wait first animation to end,
@@ -26,36 +19,24 @@ function Header({
 
   return (
     <div className="Header-wrapper">
-      {title !== "product designer" && (
-        <div className="Back-button">
-          <button
-            type="button"
-            onClick={() => {
-              setSearchResults(true);
-              setTitle("product designer");
-              setFrontend(false);
-              setPhotographer(false);
-            }}
-          >
-            Back
-          </button>
+      {shouldAnimate ? (
+        <div className="App-search">
+          <img src={Search} alt="search icon" />
+          {animationEnd && <h1>victor santos product designer</h1>}
+        </div>
+      ) : (
+        <div className="App-search-no-animation">
+          <img src={Search} alt="search icon" />
+          <h1>victor santos product designer</h1>
         </div>
       )}
-      <div className="App-search">
-        <img src={Search} alt="search icon" />
-
-        {animationEnd && <h1>victor santos {title}</h1>}
-      </div>
     </div>
   );
 }
 
 Header.propTypes = {
-  setSearchResults: PropTypes.func.isRequired,
-  setFrontend: PropTypes.func.isRequired,
-  setPhotographer: PropTypes.func.isRequired,
-  title: PropTypes.string.isRequired,
-  setTitle: PropTypes.func.isRequired,
+  Search: PropTypes.string.isRequired,
+  shouldAnimate: PropTypes.bool.isRequired,
 };
 
 export default Header;

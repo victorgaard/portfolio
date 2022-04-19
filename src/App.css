@@ -81,6 +81,28 @@ body {
   margin-left: auto;
 }
 
+.App-search-no-animation {
+  position: relative;
+  display: flex;
+  background: #221c44;
+  border: 2px solid #4d457c;
+  width: 650px;
+  color: #b2a8ee;
+  padding: 16px 24px;
+  border-radius: 50px;
+  gap: 1rem;
+  align-items: center;
+  animation: fadeInDown 0.2s;
+}
+
+.App-search-no-animation h1 {
+  min-height: 1.5rem;
+  font-size: 1.33rem;
+  overflow: hidden;
+  border-right: 0.15em solid transparent;
+  white-space: nowrap;
+}
+
 @keyframes grow {
   from {
     width: 72px;
@@ -175,7 +197,7 @@ body {
   font-size: 1rem;
   font-weight: 400;
   opacity: 0;
-  animation: fadeInDown 0.2s forwards;
+  animation: fadeInDown 0.2s 0.1s forwards;
 }
 
 .Search-results--inner {
@@ -194,7 +216,7 @@ body {
   color: #ca7786;
   font-weight: 700;
   opacity: 0;
-  animation: fadeInDown 0.2s 0.1s forwards;
+  animation: fadeInDown 0.2s 0.15s forwards;
 }
 
 .Search-results--inner button {
@@ -480,7 +502,7 @@ ul li::before {
   opacity: 0;
   animation: fadeInDown 0.2s 0.1s forwards;
   display: flex;
-  margin-top: 6rem;
+  margin-top: 5rem;
   margin-bottom: 3rem;
   gap: 24px;
   align-items: center;
@@ -672,6 +694,24 @@ ul li::before {
 
   .App-search {
     margin-top: 35vh;
+  }
+
+  .App-search-no-animation {
+    padding: 1rem;
+    gap: 0.75rem;
+    height: 3.5rem;
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  .App-search-no-animation h1 {
+    font-size: 1.1rem;
+    min-height: 1.25rem;
+  }
+
+  .App-search-no-animation img {
+    width: 1rem;
+    height: 1rem;
   }
 
   .Back-button {
