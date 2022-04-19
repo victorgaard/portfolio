@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import PropTypes from "prop-types";
 import trips from "./util/trips";
 import modalOps from "./util/modalOps";
@@ -31,7 +31,8 @@ function Modal({ modal, setModal }) {
   }, []);
 
   return (
-    <div
+    <Link
+      to="/photographer"
       className={modal ? "modal open" : "modal"}
       aria-hidden="true"
       onClick={() => {
@@ -83,7 +84,7 @@ function Modal({ modal, setModal }) {
           &nbsp;{location}
         </p>
       </div>
-    </div>
+    </Link>
   );
 }
 

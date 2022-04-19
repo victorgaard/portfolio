@@ -21,7 +21,6 @@ function Photographer({ Search, setShouldAnimate, modal, setModal }) {
   };
 
   useEffect(() => {
-    setModal(false);
     if (modal) {
       window.onpopstate = handleBack;
     }

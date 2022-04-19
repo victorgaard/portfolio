@@ -45,7 +45,17 @@ function App() {
           />
           <Route
             path="/photographer/:country/:id/*"
-            element={<Modal modal={modal} setModal={setModal} />}
+            element={
+              <>
+                <Photographer
+                  setShouldAnimate={setShouldAnimate}
+                  Search={Search}
+                  modal={modal}
+                  setModal={setModal}
+                />
+                <Modal modal={modal} setModal={setModal} />
+              </>
+            }
           />
           <Route
             path="*"
