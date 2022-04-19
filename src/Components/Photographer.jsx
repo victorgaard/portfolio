@@ -11,6 +11,15 @@ function Photographer({ Search, setShouldAnimate }) {
   const [titlePhoto, setTitlePhoto] = useState("");
   const [location, setLocation] = useState("");
 
+  const prettify = (string) => {
+    return string
+      .toLowerCase()
+      .replaceAll(",", "")
+      .replaceAll("'", "")
+      .split(" ")
+      .join("-");
+  };
+
   const handleBack = () => {
     setModal(false);
     modalOps("close");
@@ -52,6 +61,7 @@ function Photographer({ Search, setShouldAnimate }) {
             </p>
           </div>
         </section>
+
         {trips.map((trip) => (
           <section key={trip.id} className="Photographer-div">
             <div className="Photographer-div--header">
@@ -100,7 +110,9 @@ function Photographer({ Search, setShouldAnimate }) {
             <div className="img-grid">
               {trip.photos.map((item) => (
                 <Link
-                  to={`${item[0]}/${item[3].split(" ").join("-")}`}
+                  to={`${prettify(trip.location)}/${item[0]}/${prettify(
+                    item[3]
+                  )}`}
                   key={item[0]}
                   className={
                     item[2] === "normal" ? "img-wrapper" : "img-wrapper special"
