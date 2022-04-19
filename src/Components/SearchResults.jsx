@@ -31,7 +31,7 @@ function SearchResults({ shouldAnimate }) {
                 </div>
 
                 <div>
-                  <Link to="/frontend">
+                  <Link to="/developer">
                     <button type="button">
                       victor santos front-end developer
                     </button>
@@ -56,7 +56,7 @@ function SearchResults({ shouldAnimate }) {
             </div>
 
             <div>
-              <Link to="/frontend">
+              <Link to="/developer">
                 <button type="button">victor santos front-end developer</button>
               </Link>
 

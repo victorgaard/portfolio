@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Components/Home";
-import Frontend from "./Components/Frontend";
+import Developer from "./Components/Developer";
 import Photographer from "./Components/Photographer";
 import Search from "./assets/search.svg";
 import "./App.css";
@@ -24,9 +24,9 @@ function App() {
             }
           />
           <Route
-            path="/frontend"
+            path="/developer"
             element={
-              <Frontend setShouldAnimate={setShouldAnimate} Search={Search} />
+              <Developer setShouldAnimate={setShouldAnimate} Search={Search} />
             }
           />
           <Route

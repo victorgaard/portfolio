@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import Avatar from "../assets/avatar.jpg";
 
-function Frontend({ Search, setShouldAnimate }) {
+function Developer({ Search, setShouldAnimate }) {
   const [projects, setProjects] = useState();
 
   // Get the projects list
@@ -308,9 +308,9 @@ function Frontend({ Search, setShouldAnimate }) {
   );
 }
 
-Frontend.propTypes = {
+Developer.propTypes = {
   Search: PropTypes.string.isRequired,
   setShouldAnimate: PropTypes.func.isRequired,
 };
 
-export default Frontend;
+export default Developer;
