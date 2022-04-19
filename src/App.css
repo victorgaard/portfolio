@@ -21,7 +21,7 @@ body {
 .Back-button button {
   opacity: 0;
   width: 100%;
-  padding: 22px 0;
+  padding: 1.188rem 0;
   background: transparent;
   border-radius: 50px;
   color: #b2a8ee;
@@ -604,6 +604,7 @@ ul li::before {
   cursor: pointer;
   overflow: hidden;
   transition: transform 0.2s;
+  text-decoration: none;
 }
 
 .modal.open {
@@ -652,6 +653,7 @@ ul li::before {
 .infos p {
   margin: 0;
   line-height: 1.5rem;
+  color: #ffffff;
 }
 
 .Hidden-lg,

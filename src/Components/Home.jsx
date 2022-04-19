@@ -15,7 +15,7 @@ function Home({ Search, shouldAnimate, setShouldAnimate }) {
   return (
     <>
       <Header Search={Search} shouldAnimate={shouldAnimate} />
-      <SearchResults Search={Search} shouldAnimate={shouldAnimate} />
+      <SearchResults shouldAnimate={shouldAnimate} />
     </>
   );
 }

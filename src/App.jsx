@@ -3,12 +3,14 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Components/Home";
 import Developer from "./Components/Developer";
 import Photographer from "./Components/Photographer";
+import Modal from "./Components/Modal";
 import Search from "./assets/search.svg";
 import "./reset.css";
 import "./App.css";
 
 function App() {
   const [shouldAnimate, setShouldAnimate] = useState(true);
+  const [modal, setModal] = useState(true);
 
   return (
     <div className="App">
@@ -36,17 +38,14 @@ function App() {
               <Photographer
                 setShouldAnimate={setShouldAnimate}
                 Search={Search}
+                modal={modal}
+                setModal={setModal}
               />
             }
           />
           <Route
-            path="/photographer/*"
-            element={
-              <Photographer
-                setShouldAnimate={setShouldAnimate}
-                Search={Search}
-              />
-            }
+            path="/photographer/:country/:id/*"
+            element={<Modal modal={modal} setModal={setModal} />}
           />
           <Route
             path="*"
