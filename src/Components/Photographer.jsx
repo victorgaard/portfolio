@@ -96,7 +96,7 @@ function Photographer({ Search, setShouldAnimate, modal, setModal }) {
                     </clipPath>
                   </defs>
                 </svg>
-                &nbsp;{trip.location}&nbsp;&nbsp;&nbsp;&nbsp;{trip.date}
+                &nbsp;{trip.displayName}&nbsp;&nbsp;&nbsp;&nbsp;{trip.date}
               </p>
               {trip.description.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>

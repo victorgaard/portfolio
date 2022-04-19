@@ -5,6 +5,7 @@ const trips = [
     id: 1,
     country: "Ísland",
     location: "Iceland",
+    displayName: "Iceland",
     date: "August 2021",
     description: [
       [
@@ -104,7 +105,8 @@ const trips = [
   {
     id: 2,
     country: "Sápmi",
-    location: "Finnish Lapland",
+    location: "Finland",
+    displayName: "Finnish Lapland",
     date: "October 2021",
     description: [
       [
